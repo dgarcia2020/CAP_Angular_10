@@ -1,0 +1,25 @@
+<div class = "container">
+  <div class = "login-form" [formGroup]="formSong">
+  <h1>{{title}}</h1>
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input matInput type="text" placeholder="Nombre" formControlName="name">
+      <mat-error *ngIf="formSong.get('name')?.errors?.required">El nombre es requerido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Artista</mat-label>
+      <input matInput type="text" placeholder="Artista" formControlName="artist">
+      <mat-error *ngIf="formSong.get('artist')?.errors?.required">El artista es requerido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Album</mat-label>
+      <input matInput type="text" placeholder="Album" formControlName="album">
+      <mat-error *ngIf="formSong.get('album')?.errors?.required">El album es requerido</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)= "save()" [disabled]="formSong.invalid || disableButton">Guardar</button>
+  </div>
+</div>
+

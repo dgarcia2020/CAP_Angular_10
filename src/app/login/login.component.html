@@ -12,6 +12,6 @@
       <mat-error *ngIf="formLogin.get('password')?.errors?.minlength && !formLogin.get('password')?.errors?.required">La longitud minima de la contraseña es de 3 caracteres</mat-error>
       <mat-error *ngIf="formLogin.get('password')?.errors?.required">La contraseña es requerida</mat-error>
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)= "login()" [disabled]="formLogin.invalid">Ingresar</button>
+    <button mat-raised-button color="primary" (click)= "login()" [disabled]="formLogin.invalid || disableButton">Ingresar</button>
   </div>
 </div>
